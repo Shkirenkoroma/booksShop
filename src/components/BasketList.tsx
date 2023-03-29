@@ -1,7 +1,7 @@
 import BasketItem from './BasketItem';
+import { FC } from "react";
 
-const BasketList = (props) => {
-    const { order, setOrder } = props;
+const BasketList:FC<any> = ({ order, setOrder }):JSX.Element => {
 
     if (!order.length) {
         return (
@@ -15,14 +15,14 @@ const BasketList = (props) => {
     return (
         <ul className='basket list-group col-md-4'>
             <li className='list-group-item active'>Корзина</li>
-            {order.map((item, index) => (
+            {order.map((item:any, index:any) => (
                 <BasketItem key={index} setOrder={setOrder} {...item} />
             ))}
             <li className='list-group-item active'>
-                Общая стоимость:{' '}
-                {order.reduce((acc, item) => {
+                Общая стоимость:
+                {order.reduce((acc:any, item:any) => {
                     return acc + item.price * item.quantity;
-                }, 0)}{' '}
+                }, 0)}
                 рублей.
             </li>
         </ul>

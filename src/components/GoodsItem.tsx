@@ -1,7 +1,7 @@
 import React from 'react';
+import { FC } from "react";
 
-const GoodsItem = (props) => {
-    const { name, price, setOrder } = props;
+const GoodsItem:FC<any> = ({ name, price, setOrder, id }):JSX.Element => {
 
     return (
         <div className='col-12 col-md-6 px-md-2'>
@@ -21,9 +21,9 @@ const GoodsItem = (props) => {
                         className='btn btn-primary'
                         onClick={() =>
                             setOrder({
-                                id: props.id,
-                                name: props.name,
-                                price: props.price,
+                                id: id,
+                                name: name,
+                                price: price,
                             })
                         }
                     >
