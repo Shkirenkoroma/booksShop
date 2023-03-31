@@ -3,6 +3,7 @@ import { FC } from "react";
 import { IPropsSearch } from "../types";
 
 const Search: FC<IPropsSearch> = ({ onChange, value }): JSX.Element => {
+	
 	return (
 		<TextField
 			type="search"
@@ -11,9 +12,9 @@ const Search: FC<IPropsSearch> = ({ onChange, value }): JSX.Element => {
 			label="search"
 			variant="standard"
 			fullWidth
-            sx={{
-                mb:"1.5rem"
-            }}
+			sx={{
+				mb: "1.5rem",
+			}}
 		/>
 	);
 };

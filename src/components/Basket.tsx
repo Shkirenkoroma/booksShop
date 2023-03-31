@@ -31,12 +31,12 @@ const Basket: FC<IPropsBasket> = ({
 				) : (
 					order.map((item: IMappingProps) => (
 						<BasketItem
-						key={item.name}
-						item={item}
-						setOrder={removeFromOrder}
+							key={item.name}
+							item={item}
+							setOrder={removeFromOrder}
 						></BasketItem>
-						))
-						)}
+					))
+				)}
 				<Divider />
 				<ListItem>
 					<Typography sx={{ fontWeight: 700 }}>

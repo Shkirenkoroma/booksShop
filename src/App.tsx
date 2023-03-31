@@ -1,24 +1,12 @@
 import { useState } from "react";
-
 import GoodsList from "./components/GoodsList";
 import Search from "./components/Search";
-
 import { goods } from "./api/json";
 import Header from "./components/Header";
 import Container from "@mui/material/Container";
 import Basket from "./components/Basket";
 import Snack from "./components/Snack";
-import {
-	IMap,
-	IMappingProps,
-	inlineBoolean,
-	inlineNumber,
-	inlineString,
-	IOrder,
-	IProps,
-	IPropsProduct,
-	IState,
-} from "./types";
+import { IMappingProps, inlineBoolean, inlineString, IOrder } from "./types";
 
 const App = () => {
 	const [order, setOrder] = useState<IMappingProps[]>([]);

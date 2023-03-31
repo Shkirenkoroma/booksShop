@@ -6,7 +6,7 @@ export type IPropsBasket = {
 	openCart: inlineBoolean;
 	closeCart: () => void;
 	order: IMappingProps[];
-	removeFromOrder: (e:inlineString) => void;
+	removeFromOrder: (e: inlineString) => void;
 };
 
 export type IPropsSnack = {
@@ -30,7 +30,7 @@ export interface IState {
 	poster: inlineString;
 	price: inlineNumber;
 	quantity: inlineNumber;
-}
+};
 
 export interface IPropsProduct {
 	id: inlineString;
@@ -38,12 +38,13 @@ export interface IPropsProduct {
 	name: inlineString;
 	poster: inlineString;
 	price: inlineNumber;
-}
+};
 
 export interface IItem {
 	item: IState;
 	setOrder: (e: inlineString) => void;
-}
+};
+
 export type IMap = {
 	id: inlineString;
 };
@@ -52,7 +53,7 @@ export interface IOrder {
 	id: inlineString;
 	name: inlineString;
 	price: inlineNumber;
-}
+};
 
 export interface IProps {
 	id: inlineString;
@@ -60,12 +61,12 @@ export interface IProps {
 	price: inlineNumber;
 	setOrder: (e: IOrder) => void;
 	poster: inlineString;
-}
+};
 
 export interface IPropsGoodsList {
 	goods: IPropsProduct[];
 	addOrder: (e: IOrder) => void;
-}
+};
 
 export type IPropsGoodsItem = {
 	name: inlineString;
@@ -79,13 +80,10 @@ export interface IMappingProps {
 	id: inlineString;
 	name: inlineString;
 	price: inlineNumber;
-   quantity:inlineNumber
-}
+	quantity: inlineNumber;
+};
 
 export interface IMappingBasketItem {
 	item: IMappingProps;
-	setOrder:(e:inlineString) => void;
-
-}
-
-
+	setOrder: (e: inlineString) => void;
+};
