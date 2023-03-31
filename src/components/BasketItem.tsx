@@ -1,19 +1,25 @@
 import { FC } from "react";
+import ListItem from "@mui/material/ListItem";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import ClearOutlinedIcon from "@mui/icons-material/ClearOutlined";
+import { IItem, IMappingBasketItem, IMappingProps, IState } from "../types";
 
-const BasketItem: FC<any> = ({
-	name,
-	price,
-	quantity,
-	id,
-	setOrder,
-}): JSX.Element => {
+const BasketItem: FC<IMappingBasketItem> = ({ item, setOrder }): JSX.Element => {
+	const { name, price, quantity, id } = item;
+	const deleteBook = (): void => {
+		setOrder(id);
+	};
+
 	return (
-		<li className="list-group-item">
-			{name} {price}руб x{quantity}
-			<button className="btn btn-primary" onClick={() => setOrder(id)}>
-				Удалить из корзины
-			</button>
-		</li>
+		<ListItem>
+			<Typography variant="body1">
+				{name} {price}руб x {quantity}
+			</Typography>
+			<IconButton onClick={deleteBook}>
+				<ClearOutlinedIcon />
+			</IconButton>
+		</ListItem>
 	);
 };
 

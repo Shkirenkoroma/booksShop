@@ -1,17 +1,17 @@
-
-import GoodsItem from './GoodsItem';
 import { FC } from "react";
-const GoodsList:FC<any> = ({ goods, setOrder }):JSX.Element => {
+import GoodsItem from './GoodsItem';
+import Grid from '@mui/material/Grid';
+import { IPropsGoodsList } from '../types';
+
+const GoodsList:FC<IPropsGoodsList> = ({ goods, addOrder }):JSX.Element => {
 
 
     return (
-        <div className='goods-list col-md-8'>
-            <div className='row'>
-                {goods.map((item:any) => (
-                    <GoodsItem key={item.id} setOrder={setOrder} {...item} />
+        <Grid container spacing={2}>
+                {goods.map((item) => (
+                    <GoodsItem key={item.id} setOrder={addOrder} {...item} />
                 ))}
-            </div>
-        </div>
+          </Grid>
     );
 };
 

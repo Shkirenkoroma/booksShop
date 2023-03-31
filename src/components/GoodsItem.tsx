@@ -1,37 +1,40 @@
-import React from 'react';
+import { Button, Card, CardActions, CardContent, CardMedia, Grid, Typography } from '@mui/material';
 import { FC } from "react";
+import { IProps, IPropsGoodsItem } from '../types';
 
-const GoodsItem:FC<any> = ({ name, price, setOrder, id }):JSX.Element => {
-
+const GoodsItem:FC<IProps> = ({ name, price, setOrder, id, poster }):JSX.Element => {
+const handleItem = () => {
+    setOrder({
+        id: id,
+        name: name,
+        price: price,
+    })
+}
     return (
-        <div className='col-12 col-md-6 px-md-2'>
-            <div className='card'>
-                <img
-                    src={`https://via.placeholder.com/300x150.png?text=${name.slice(
-                        0,
-                        12
-                    )}`}
-                    className='card-img-top'
+        <Grid item xs={12} md={4}>
+            <Card
+            sx={{height:'100%'}}>
+                <CardMedia
+                    src={poster}
                     alt={name}
+                    title={name}
+                    sx={{height:140}}
+                    component="img"
                 />
-                <div className='card-body'>
-                    <h5 className='card-title'>{name}</h5>
-                    <p className='card-text'>Цена: {price} руб.</p>
-                    <button
-                        className='btn btn-primary'
-                        onClick={() =>
-                            setOrder({
-                                id: id,
-                                name: name,
-                                price: price,
-                            })
-                        }
+                <CardContent>
+                   <Typography variant="h6" component="h3">{name}</Typography>
+                    <Typography variant="body1">Цена: {price} руб.</Typography>
+                    </CardContent>
+                    <CardActions>
+                    <Button
+                        variant="contained"
+                        onClick={handleItem}
                     >
                         Купить
-                    </button>
-                </div>
-            </div>
-        </div>
+                    </Button>
+                    </CardActions>
+            </Card>
+        </Grid>
     );
 };
 
