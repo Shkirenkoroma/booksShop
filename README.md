@@ -1,4 +1,5 @@
-#### Live-версия проекта доступна по ссылке https://shkirenkoroma.github.io/booksShop/
+#### Live-версия проекта доступна по ссылке: https://shkirenkoroma.github.io/booksShop/
+
 Мини-проект "Книжный магазин", основной задачей ставилось реализовать с применением библиотеки стилизации Material UI
 ![image](https://user-images.githubusercontent.com/61347452/229108307-6bf6b311-5d56-48f6-a6a8-98f6a56d8798.png)
 ![image](https://user-images.githubusercontent.com/61347452/229108366-7630fe0e-b89c-4694-9c00-667c99a78f79.png)
